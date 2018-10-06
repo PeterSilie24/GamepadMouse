@@ -1,5 +1,5 @@
 # GamepadMouse
-This program lets you use your gamepad as a mouse.
+With this program you can use your gamepad as a mouse.
 
 Currently only Windows is supported and some features require elevated privileges (for example using the on-screen keyboard).
 
