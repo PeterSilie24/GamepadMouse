@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2018 Phil Badura
+ * Copyright (c) 2023 Phil Badura
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,50 +24,22 @@
 
 #pragma once
 
-#include <stdio.h>
-#include <stdlib.h>
+#ifdef __cplusplus
+#define EXTERN extern "C"
+#else
+#define EXTERN
+#endif
 
-#include <Windows.h>
-#include <shellapi.h>
+EXTERN int gamepadsCount();
 
-extern void openOnScreenKeyboard();
+EXTERN void gamepadsInitialize();
 
-extern void closeOnScreenKeyboard();
+EXTERN void gamepadsTerminate();
 
-extern void toggleOnScreenKeyboard();
+EXTERN void gamepadsUpdate();
 
-extern void keyboardPressKey(WORD wVk);
+EXTERN int gamepadIsConnected(const int iIndex);
 
-extern void keyboardReleaseKey(WORD wVk);
+EXTERN int gamepadIsEnabled(const int iIndex);
 
-extern void keyboardPressReturn();
-
-extern void keyboardReleaseReturn();
-
-extern void keyboardPressControl();
-
-extern void keyboardReleaseControl();
-
-extern void keyboardPressUp();
-
-extern void keyboardReleaseUp();
-
-extern void keyboardPressDown();
-
-extern void keyboardReleaseDown();
-
-extern void keyboardPressLeft();
-
-extern void keyboardReleaseLeft();
-
-extern void keyboardPressRight();
-
-extern void keyboardReleaseRight();
-
-extern void keyboardShortcut(WORD wVk1, WORD wVk2);
-
-extern void keyboardShortcutExtended(WORD wVk1, WORD wVk2, WORD wVk3);
-
-extern void switchWindows();
-
-extern void takeScreenshot();
+EXTERN void gamepadToggle(const int iIndex);

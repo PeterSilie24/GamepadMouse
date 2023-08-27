@@ -15,30 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="gamepad.c">
+    <ClCompile Include="keyboard.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="keyboard.c">
+    <ClCompile Include="mouse.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="mouse.c">
+    <ClCompile Include="main.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="gamepad-mouse.c">
+    <ClCompile Include="gamepad.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="interface.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gamepad.h">
+    <ClInclude Include="keyboard.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="keyboard.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="mouse.h">
+    <ClInclude Include="mouse.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="gamepad.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="interface.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

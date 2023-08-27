@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2018 Phil Badura
+ * Copyright (c) 2023 Phil Badura
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,25 +22,52 @@
  * SOFTWARE.
  */
 
-#pragma once
+#include "interface.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "gamepad.hpp"
 
-#include <Windows.h>
+gp::GamepadPtr gamepads[4] = { };
 
-extern void mouseMove(LONG dx, LONG dy);
+int gamepadsCount()
+{
+	return static_cast<int>(sizeof(gamepads) / sizeof(gp::GamepadPtr));
+}
 
-extern void mouseScroll(LONG dx, LONG dy);
+void gamepadsInitialize()
+{
+	for (int iIndex = 0; iIndex < gamepadsCount(); iIndex++)
+	{
+		gamepads[iIndex] = gp::makeDefault(iIndex, false);
+	}
+}
 
-extern void mousePressLeft();
+void gamepadsTerminate()
+{
+	for (int iIndex = 0; iIndex < gamepadsCount(); iIndex++)
+	{
+		gamepads[iIndex] = nullptr;
+	}
+}
 
-extern void mouseReleaseLeft();
+void gamepadsUpdate()
+{
+	for (int iIndex = 0; iIndex < gamepadsCount(); iIndex++)
+	{
+		gamepads[iIndex]->update();
+	}
+}
 
-extern void mousePressRight();
+int gamepadIsConnected(const int iIndex)
+{
+	return static_cast<int>(gamepads[iIndex]->isConnected());
+}
 
-extern void mouseReleaseRight();
+int gamepadIsEnabled(const int iIndex)
+{
+	return static_cast<int>(gamepads[iIndex]->isEnabled());
+}
 
-extern void mousePressMiddle();
-
-extern void mouseReleaseMiddle();
+void gamepadToggle(const int iIndex)
+{
+	gamepads[iIndex]->toggle();
+}

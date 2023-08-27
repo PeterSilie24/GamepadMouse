@@ -19,5 +19,5 @@ Layout (Xbox-like gamepads):
 - Press right stick: ctrl
 - Left shoulder: alt + escape
 - Right shoulder: take screenshot (windows + print)
-- Left trigger: scroll down
-- Right trigger: scroll up
+- Left trigger: scroll up
+- Right trigger: scroll down
